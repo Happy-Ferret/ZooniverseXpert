@@ -7,13 +7,21 @@
 <!ENTITY zooniversexpert.app.placeholder-id 'Enter an ID'>
 <!ENTITY zooniversexpert.app.placeholder-id-len 'Enter a number'>
 <!ENTITY zooniversexpert.app.placeholder-url-prefix 'Enter what the image links begin with'>
+<!ENTITY zooniversexpert.app.placeholder-batch-size 'Enter a number'>
+<!ENTITY zooniversexpert.app.placeholder-thumbnail-width '###'>
+<!ENTITY zooniversexpert.app.placeholder-thumbnail-height '###'>
 
 <!ENTITY zooniversexpert.app.url-prefix-label 'Link Prefix:'>
 <!ENTITY zooniversexpert.app.id-length-label 'ID Length:'>
 <!ENTITY zooniversexpert.app.image-ext-label 'Image Extension:'>
 <!ENTITY zooniversexpert.app.id-label 'ID:'>
+<!ENTITY zooniversexpert.app.batch-size-label 'Batch Size:'>
+<!ENTITY zooniversexpert.app.thumbnail-width-label 'Width:'>
+<!ENTITY zooniversexpert.app.thumbnail-height-label 'Height:'>
+<!ENTITY zooniversexpert.app.thumbnail-dimensions-desc '(leave width and height blank in order to see images in full size)'>
 
 <!ENTITY zooniversexpert.app.id-length-desc '(determines number of preceeding &#39;0&#39;s, must obviously be a number greater then or equal to length of ID you typed in field above)'>
 <!ENTITY zooniversexpert.app.url-prefix-example '(stuff that goes before the ID for example: "http://zooniverse-export.s3-website-us-east-1.amazonaws.com/21484_1000_D35_Season&#37;202_Set&#37;201_EK")'>
 
 <!ENTITY zooniversexpert.app.go 'Generate Gallery'>
+<!ENTITY zooniversexpert.app.go-next 'Generate Next Batch of'>

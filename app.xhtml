@@ -30,11 +30,27 @@
 		<br/>
 		<small>&zooniversexpert.app.url-prefix-example;</small>
 		<br/>
+		&zooniversexpert.app.batch-size-label;
+		<input type="text" ng-model="BC.batch_size" placeholder="&zooniversexpert.app.placeholder-batch-size;" size="15"/>
+		<br/>
 		<br/>
 		<input type="button" value="&zooniversexpert.app.go;" ng-click="BC.generate()"/>
+		<input type="button" value="&zooniversexpert.app.go-next; {{BC.batch_size ? BC.batch_size : 0}}" ng-click="BC.generateNext()"/>
 		<br/>
 		<br/>
 		<br/>
-		<img ng-src="{{aEntry.url}}" ng-repeat="aEntry in BC.gallery"/>
+		&zooniversexpert.app.thumbnail-width-label;
+		<input type="text" ng-model="BC.thumb_width" placeholder="&zooniversexpert.app.placeholder-thumbnail-width;" size="5"/>
+		&zooniversexpert.app.thumbnail-height-label;
+		<input type="text" ng-model="BC.thumb_height" placeholder="&zooniversexpert.app.placeholder-thumbnail-height;" size="5"/>
+		<br/>
+		<small>&zooniversexpert.app.thumbnail-dimensions-desc;</small>
+		<br/>
+		<br/>
+		<div class="gallery">
+			<a href="{{aEntry.url}}" ng-click="BC.showThumb($event, aEntry)" ng-repeat="aEntry in BC.gallery">
+				<img ng-src="{{aEntry.url}}" width="{{BC.thumb_width}}" height="{{BC.thumb_height}}"/>
+			</a>
+		</div>
 	</body>
 </html>

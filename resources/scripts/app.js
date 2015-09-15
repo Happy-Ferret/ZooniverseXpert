@@ -52,12 +52,12 @@ var	ANG_APP = angular.module('zooniversexpert', [])
 			'PNG'
 		];
 		MODULE.imgExtSelected = 'JPG';
-		
 		MODULE.id = '6076';
-		
 		MODULE.id_length = '6';
-		
+		MODULE.batch_size = 10;
 		MODULE.url_prefix = 'http://zooniverse-export.s3-website-us-east-1.amazonaws.com/21484_1000_D35_Season%202_Set%201_EK';
+		MODULE.thumb_width = 100;
+		MODULE.thumb_height = 100;
 		
 		MODULE.gallery = [];
 		/* entries are objects
@@ -74,9 +74,7 @@ var	ANG_APP = angular.module('zooniversexpert', [])
 			return str;
 		}
 		
-		MODULE.generate = function() {
-			alert('start');
-			
+		MODULE.generate = function() {			
 			MODULE.gallery = [];
 			
 			// push in target
@@ -86,11 +84,30 @@ var	ANG_APP = angular.module('zooniversexpert', [])
 				}
 			);
 			
-			alert(MODULE.url_prefix + idPreceededByZeroes(MODULE.id) + '.' + MODULE.imgExtSelected);
 			// find > id until find a broken image
-			// MODULE.gallery.
-			
-			alert('done');
+			for (var i=1; i<=parseInt(MODULE.batch_size); i++) {
+				MODULE.gallery.push(
+					{
+						url: MODULE.url_prefix + idPreceededByZeroes(parseInt(MODULE.id) + i) + '.' + MODULE.imgExtSelected
+					}
+				);
+			}
+		}
+		
+		MODULE.generateNext = function() {
+			MODULE.id = parseInt(MODULE.id) + parseInt(MODULE.batch_size);
+			MODULE.generate();
+		}
+		
+		MODULE.showThumb = function($event, aEntry) {
+			// alert($event);
+			if ($event.ctrlKey || $event.shiftKey || $event.metaKey || $event.altKey) {
+				// do nothing, user is probably shift + clickikng for new window OR ctrl + clicking for new tab OR ctrl + shift + clicking for new focused tab
+			} else {
+				prompt(myServices.sb.GetStringFromName('msg-on-what-i-would-do'), aEntry.url);
+				// show gallery popup and prevent click so it doesnt navigate to the url
+				$event.preventDefault();
+			}
 		}
 	}]);
 

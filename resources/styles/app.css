@@ -1,0 +1,10 @@
+.gallery {
+	padding: 10px;
+}
+
+.gallery a {
+	cursor: pointer;
+	margin: 10px;
+	border: 0;
+}
+
