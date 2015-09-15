@@ -14,5 +14,27 @@
 	</head>
 	<body ng-controller="BodyController as BC">
 		<h1>&zooniversexpert.app.title;</h1>
+		&zooniversexpert.app.image-ext-label;
+		<select ng-model="BC.imgExtSelected" ng-options="aOptName for aOptName in BC.imgExts"/>
+		<br/>
+		&zooniversexpert.app.id-label;
+		<input type="text" ng-model="BC.id" placeholder="&zooniversexpert.app.placeholder-id;"/>
+		<br/>
+		&zooniversexpert.app.id-length-label;
+		<input type="text" ng-model="BC.id_length" placeholder="&zooniversexpert.app.placeholder-id-len;" size="15"/>
+		<br/>
+		<small>&zooniversexpert.app.id-length-desc;</small>
+		<br/>
+		&zooniversexpert.app.url-prefix-label;
+		<input type="text" ng-model="BC.url_prefix" placeholder="&zooniversexpert.app.placeholder-url-prefix;" size="150"/>
+		<br/>
+		<small>&zooniversexpert.app.url-prefix-example;</small>
+		<br/>
+		<br/>
+		<input type="button" value="&zooniversexpert.app.go;" ng-click="BC.generate()"/>
+		<br/>
+		<br/>
+		<br/>
+		<img ng-src="{{aEntry.url}}" ng-repeat="aEntry in BC.gallery"/>
 	</body>
 </html>
