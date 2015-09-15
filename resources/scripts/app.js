@@ -47,10 +47,20 @@ var	ANG_APP = angular.module('zooniversexpert', [])
 		gAngScope = gAngBody.scope();
 		// gAngInjector = gAngBody.injector();
 		
+		MODULE.imgExts = [
+			'JPG',
+			'PNG'
+		];
+		MODULE.imgExtSelected = 'JPG';
 		
+		MODULE.id = '6076';
+		
+		MODULE.id_length = '6';
+		
+		MODULE.url_prefix = 'http://zooniverse-export.s3-website-us-east-1.amazonaws.com/21484_1000_D35_Season%202_Set%201_EK';
 	}]);
 
 function onPageReady() {
-	alert(myServices.sb.GetStringFromName('welcome-msg'))
+	// alert(myServices.sb.GetStringFromName('welcome-msg'))
 }
 document.addEventListener('DOMContentLoaded', onPageReady, false);
